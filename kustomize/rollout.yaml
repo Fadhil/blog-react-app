@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: blog-react-app
-          image: us-central1-docker.pkg.dev/fadhil-351012/react-blog-argo-test/blog-react-app:latest
+          image: us-central1-docker.pkg.dev/fadhil-351012/react-blog-argo-test/blog-react-app:cd81e4971281	
           ports:
             - containerPort: 8088
       imagePullSecrets:
