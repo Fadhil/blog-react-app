@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-react-app-service
+  namespace: default
+  labels:
+    app: blog-react-app
+spec:
+  type: ClusterIP  # Use LoadBalancer if you need external access
+  ports:
+    - port: 80
+      targetPort: 8088  # Must match the containerPort in your Rollout
+  selector:
+    app: blog-react-app  # Must match the labels in your Rollout's pod template

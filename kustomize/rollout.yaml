@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: blog-react-app
+spec:
+  replicas: 3
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 50
+        - pause: { duration: 10m }
+        - setWeight: 100
+  template:
+    metadata:
+      labels:
+        app: blog-react-app
+    spec:
+      containers:
+        - name: blog-react-app
+          image: us-central1-docker.pkg.dev/fadhil-351012/react-blog-argo-test/blog-react-app:latest
+          ports:
+            - containerPort: 8088
