@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <h2>Hello World!</h2>
         <p>This is a test of Argo CD again</p>
+        <p>Is this even working?</p>
       </header>
     </div>
   );
