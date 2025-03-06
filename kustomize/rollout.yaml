@@ -25,3 +25,5 @@ spec:
           image: us-central1-docker.pkg.dev/fadhil-351012/react-blog-argo-test/blog-react-app:latest
           ports:
             - containerPort: 8088
+      imagePullSecrets:
+        - name: gar-credentials
