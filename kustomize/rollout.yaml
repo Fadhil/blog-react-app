@@ -4,6 +4,9 @@ metadata:
   name: blog-react-app
 spec:
   replicas: 3
+    selector:
+    matchLabels:
+      app: blog-react-app 
   strategy:
     canary:
       steps:
