@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: blog-react-app
+  argocd-image-updater.argoproj.io/image-list: blog-read-app-image=us-central1-docker.pkg.dev/fadhil-351012/react-blog-argo-test/blog-react-app
+  argocd-image-updater.argoproj.io/my-image.update-strategy: latest
 spec:
   replicas: 3
   selector:
